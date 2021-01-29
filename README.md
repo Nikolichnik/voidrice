@@ -6,8 +6,8 @@ These are the dotfiles deployed by [LARBS](https://larbs.xyz) and as seen on [my
 - Settings for:
 	- vim/nvim (text editor)
 	- zsh (shell)
-	- i3wm/i3-gaps (window manager)
-	- i3blocks (status bar)
+	- dwm (window manager)
+	- dwmblocks (status bar)
 	- sxhkd (general key binder)
 	- ranger (file manager)
 	- lf (file manager)
@@ -21,8 +21,8 @@ These are the dotfiles deployed by [LARBS](https://larbs.xyz) and as seen on [my
 	- All configs that can be in `~/.config/` are.
 	- Some environmental variables have been set in `~/.zprofile` to move configs into `~/.config/`
 - Bookmarks in text files used by various scripts (like `~/.local/bin/shortcuts`)
-	- File bookmarks in `~/.config/files`
-	- Directory bookmarks in `~/.config/directories`
+	- File bookmarks in `~/.config/shell/bm-files`
+	- Directory bookmarks in `~/.config/shell/bm-dirs`
 
 ## Want even more?
 

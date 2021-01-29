@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader =" "
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -16,6 +16,7 @@ Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
@@ -26,6 +27,44 @@ set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
+
+" Display invisible characters
+set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
+set list
+
+" Air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" Unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '>'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '<'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" Theme
+colorscheme simple-dark
+syntax on
 
 " Some basics:
 	nnoremap c "_c
@@ -59,9 +98,9 @@ set clipboard+=unnamedplus
 
 " vimling:
 	nm <leader>d :call ToggleDeadKeys()<CR>
-	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
+	" imap <leader>d <esc>:call ToggleDeadKeys()<CR>a Clashes with <Space> as leader
 	nm <leader>i :call ToggleIPA()<CR>
-	imap <leader>i <esc>:call ToggleIPA()<CR>a
+	" imap <leader>i <esc>:call ToggleIPA()<CR>a Clashes with <Space> as leader
 	nm <leader>q :call ToggleProse()<CR>
 
 " Shortcutting split navigation, saving a keypress:
@@ -115,8 +154,8 @@ set clipboard+=unnamedplus
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost files,directories !shortcuts
-" Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+" Run xrdb whenever xdefaults or xresources are updated.
+	autocmd BufWritePost *xresources,*xdefaults !xrdb %
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
@@ -124,3 +163,6 @@ set clipboard+=unnamedplus
 if &diff
     highlight! link DiffText MatchParen
 endif
+
+" Have dwmblocks automatically recompile and run when you edit its config.h
+autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }

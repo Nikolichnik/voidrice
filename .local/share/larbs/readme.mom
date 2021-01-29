@@ -64,7 +64,7 @@ Below in this document, there is information about where to change programs/comp
 .PP
 Additionally, while this isn't a part of the desktop environment, the default editing mode in the shell is using vi bindings.
 If you want to learn more of this, run \f(CWMod+Shift+E\fP and type and select the option for "vi mode in shell".
-This setting can be changed if you don't like it by deleting or commenting out the contents of \f(CW~/.config/inputrc\fP.
+This setting can be changed if you don't like it by deleting or commenting out the contents of \f(CW~/.config/shell/inputrc\fP.
 .HEADING 2 "The Status Bar"
 .PP
 To the left, you'll see the numbers of your current workspace/tag(s).

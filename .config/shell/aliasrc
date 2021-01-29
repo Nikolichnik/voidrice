@@ -3,6 +3,10 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+# Setup dmenu padding and width.
+alias dmenu="dmenu -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH"
+alias dmenu_run="dmenu_run -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	cp="cp -iv" \
