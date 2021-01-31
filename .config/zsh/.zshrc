@@ -1,9 +1,3 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Theme
-ZSH_THEME="bira"
-
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -27,8 +21,11 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Theme
+ZSH_THEME="bira"
+
 # Load oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/oh-my-zsh/oh-my-zsh.sh
 
 # vi mode
 bindkey -v
