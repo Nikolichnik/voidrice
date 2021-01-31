@@ -18,5 +18,5 @@ killall xcape 2>/dev/null
 xcape -t 200 -e "Shift_L=space"
 xcape -t 200 -e "Control_L=Tab"
 xcape -t 200 -e "Alt_L=Escape"
-xcape -t 200 -e "Overlay1_Enable=a"
+xcape -t 500 -e "Overlay1_Enable=a"
 xcape -t 200 -e "Alt_R=BackSpace"
