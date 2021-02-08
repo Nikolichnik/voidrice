@@ -7,6 +7,9 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 alias dmenu="dmenu -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH"
 alias dmenu_run="dmenu_run -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH"
 
+# picom - specify config file
+alias picom="picom --config ${XDG_CONFIG_HOME:-$HOME/.config}/picom/picom.conf"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	cp="cp -iv" \
