@@ -9,10 +9,6 @@ export DMENU_PAD="9"
 export DMENU_WIDTH="$(($DISPLAY_WIDTH - 2 * $DMENU_PAD))"
 export DMENU_FONT="SauceCodePro Nerd Font-9"
 
-# Initialize aliases
-alias dmenu="dmenu -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH "
-alias dmenu_run="dmenu_run -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH "
-
 # Fix Gnome Apps Slow  Start due to failing services
 # Add this when you include flatpak in your system
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
