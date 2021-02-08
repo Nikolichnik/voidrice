@@ -2,4 +2,4 @@
 
 # Wrapper for the dmenu command to use padding
 
-dmenu -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH "$@"
+dmenu -fn $DMENU_FONT -x $DMENU_PAD -y $DMENU_PAD -z $DMENU_WIDTH "$@"
